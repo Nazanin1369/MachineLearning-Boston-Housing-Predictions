@@ -32,10 +32,12 @@ def analye_data(city_data):
     housing_prices = city_data.target
     housing_features = city_data.data
 
-    #size of data
-    print "Size of data:", (housing_features.shape[0])
-    #Number of features?
-    print "Number of features:", (housing_features.shape[1])
+    print housing_features.shape[1]
+    print housing_prices.shape[0]
+    #Total number of houses
+    print "Total number of houses:", (housing_features.shape[0])
+    #Total number of features
+    print "Total number of features:", (housing_features.shape[1])
     #Minimum price
     print "Housing prices - minimum:", np.min(housing_prices)
     #Maximum price
