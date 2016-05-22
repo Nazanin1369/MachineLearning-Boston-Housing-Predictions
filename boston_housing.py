@@ -32,8 +32,6 @@ def analye_data(city_data):
     housing_prices = city_data.target
     housing_features = city_data.data
 
-    print housing_features.shape[1]
-    print housing_prices.shape[0]
     #Total number of houses
     print "Total number of houses:", (housing_features.shape[0])
     #Total number of features
