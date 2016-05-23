@@ -1,5 +1,6 @@
 ## Project 1: Model Evaluation & Validation
 ### Predicting Boston Housing Prices
+This document describes the implementation of a Machine Learning regressor that is capable of predicting Boston housing prices. The data used here is loaded in sklearn's load_boston dataset and comes from the StatLib library which is maintained at Carnegie Mellon University.
 
 #### Install
 
@@ -11,7 +12,7 @@ This project requires **Python 2.7** and the following Python libraries installe
 
 You will also need to have software installed to run and execute an [iPython Notebook](http://ipython.org/notebook.html)
 
-Udacity recommends our students install [Anaconda](https://www.continuum.io/downloads), i pre-packaged Python distribution that contains all of the necessary libraries and software for this project. 
+Udacity recommends our students install [Anaconda](https://www.continuum.io/downloads), i pre-packaged Python distribution that contains all of the necessary libraries and software for this project.
 
 #### Code
 
