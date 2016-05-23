@@ -1,6 +1,6 @@
 ## Project 1: Model Evaluation & Validation
 ### Predicting Boston Housing Prices
-This document describes the implementation of a Machine Learning regressor that is capable of predicting Boston housing prices. The data used here is loaded in sklearn's load_boston dataset and comes from the [StatLib library](https://archive.ics.uci.edu/ml/datasets/Housing) which is maintained at Carnegie Mellon University.
+This document describes the implementation of a Machine Learning regressor that is capable of predicting Boston housing prices. The data used here is loaded in ([`sklearn.datasets.load_boston`](http://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_boston.html#sklearn.datasets.load_boston)) and comes from the StatLib library which is maintained at Carnegie Mellon University. You can find more information on this dataset from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Housing) page.
 
 #### Statistical analysis
 * Total number of houses: 506
@@ -46,7 +46,3 @@ In a terminal or command window, navigate to the top-level project directory `bo
 ```jupyter notebook boston_housing.ipynb```
 
 This will open the iPython Notebook software and project file in your browser.
-
-#### Data
-
-The dataset used in this project is included with the scikit-learn library ([`sklearn.datasets.load_boston`](http://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_boston.html#sklearn.datasets.load_boston)). You do not have to download it separately. You can find more information on this dataset from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Housing) page.
