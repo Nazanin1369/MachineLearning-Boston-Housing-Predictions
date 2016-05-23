@@ -23,6 +23,11 @@ I think Mean Squared Error(MSE) is the most appropriate metric to use based on t
   metrics such as 'Accuracy', 'Precision', 'Recall' and 'F1 Score'. Hence We need to choose between 'MSE' and 'MAE'.
 * Between 'MSE' and 'MAE' both can work well with this problem but I would rather use 'MSE' due ti its properties. 'MSE'     penalizes larger errors more than smaller ones( since it is squarifies the absolute error so 0.2 will calc for 0.04 but    20 will be 40) and also it is a differentaible function.
 
+##### Splitting the data
+To properly evaluate the model, the data we have must be split into two sets: a training set and a testing set for the following reasons:
+  * Give estimate on performance on independant datasets
+  * Serves as a check for overfitting
+
 #### Installation
 This project requires **Python 2.7** and the following Python libraries installed:
 
