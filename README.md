@@ -17,7 +17,7 @@ with the time. So it is a **Regression problem** and uses regression problem's e
 for model evaluation.
 
 ##### Measures of model performance
-I think Mean Squared Error(MSE) is the most appropriate metric to use based on the following reasons:
+I think **Mean Squared Error(MSE)** is the most appropriate metric to use based on the following reasons:
 
 * Predicting housing price problem is a regression problem since prices changes over time. So we cannot use Classification
   metrics such as 'Accuracy', 'Precision', 'Recall' and 'F1 Score'. Hence We need to choose between 'MSE' and 'MAE'.
@@ -47,7 +47,6 @@ Template code is provided in the `boston_housing.ipynb` notebook file. While som
 
 In a terminal or command window, navigate to the top-level project directory `boston_housing/` (that contains this README) and run one of the following commands:
 
-```ipython notebook boston_housing.ipynb```
-```jupyter notebook boston_housing.ipynb```
+  ```ipython notebook boston_housing.ipynb```
 
 This will open the iPython Notebook software and project file in your browser.
