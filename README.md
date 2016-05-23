@@ -18,10 +18,12 @@ for model evaluation.
 
 ##### Measures of model performance
 I think Mean Squared Error(MSE) is the most appropriate metric to use based on the following reasons:
-1- Predicting housing price problem is a regression problem since prices changes over time. So we cannot use Classification metrics such as 'Accuracy', 'Precision', 'Recall' and 'F1 Score'. Hence We need to choose between 'MSE' and 'MAE'.
-2- Between 'MSE' and 'MAE' both can work well with this problem but I would rather use 'MSE' due ti its properties. 'MSE' penalizes larger errors more than smaller ones( since it is squarifies the absolute error so 0.2 will calc for 0.04 but 20 will be 40) and also it is a differentaible function.
-#### Installation
 
+* Predicting housing price problem is a regression problem since prices changes over time. So we cannot use Classification
+  metrics such as 'Accuracy', 'Precision', 'Recall' and 'F1 Score'. Hence We need to choose between 'MSE' and 'MAE'.
+* Between 'MSE' and 'MAE' both can work well with this problem but I would rather use 'MSE' due ti its properties. 'MSE'     penalizes larger errors more than smaller ones( since it is squarifies the absolute error so 0.2 will calc for 0.04 but    20 will be 40) and also it is a differentaible function.
+
+#### Installation
 This project requires **Python 2.7** and the following Python libraries installed:
 
 - [NumPy](http://www.numpy.org/)
