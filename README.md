@@ -24,9 +24,13 @@ I think **Mean Squared Error(MSE)** is the most appropriate metric to use based 
 * Between 'MSE' and 'MAE' both can work well with this problem but I would rather use 'MSE' due ti its properties. 'MSE'     penalizes larger errors more than smaller ones( since it is squarifies the absolute error so 0.2 will calc for 0.04 but    20 will be 40) and also it is a differentaible function.
 
 ##### Splitting the data
-To properly evaluate the model, the data we have must be split into two sets: a training set and a testing set for the following reasons:
-  * Give estimate on performance on independant datasets
-  * Serves as a check for overfitting
+Learning the parameters of a prediction function and testing it on the same data is a methodological mistake: a model that would just repeat the labels of the samples that it has just seen would have a perfect score but would fail to predict anything useful on yet-unseen data. This situation is called overfitting. To avoid it, it is common practice when performing a (supervised) machine learning experiment to hold out part of the available data as a test set X_test, y_test.(*)
+
+Hence to properly evaluate the model, the data we have must be split into two sets: a training set and a testing set to be able to:
+  1- Give estimate on performance on independant datasets
+  2- Serves as a check for overfitting
+
+(*) Scikitlearn documentation.   
 
 #### Installation
 This project requires **Python 2.7** and the following Python libraries installed:
