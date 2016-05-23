@@ -51,6 +51,44 @@ Grid search is one of the algorithms used for tuning hyperparameters; true to it
 
 Grid search is dead simple to set up and trivial to parallelize. It is the most expensive method in terms of total computation time. However, if run in parallel, it is fast in terms of wall clock time.
 
+### Analyzing Model Performance
+Up to this point we've been describing the techniques used: MSE as performance metric, splitting the data between training and test, $k$-fold cross-validation for validation and an exhaustive grid search for finding the best parameters. In this section we will analyse the model constructed.
+
+The model we built is a decision tree regressor in which we varied the maximum tree depth by passing the max_depth argument to sklearn's DecisionTreeRegressor.
+
+      ``` # Create four different models based on max_depth
+          for k, depth in enumerate([1,2,3,4,5,6,7,8,9,10]):
+
+        for i, s in enumerate(sizes):
+
+            # Setup a decision tree regressor so that it learns a tree with max_depth = depth
+            regressor = DecisionTreeRegressor(max_depth = depth)
+
+            # Fit the learner to the training data
+            regressor.fit(X_train[:s], y_train[:s])
+
+            # Find the performance on the training set
+            train_err[i] = performance_metric(y_train[:s], regressor.predict(X_train[:s]))
+
+            # Find the performance on the testing set
+            test_err[i] = performance_metric(y_test, regressor.predict(X_test))```
+            
+            
+##### Bias and Variance
+
+We have plotted 10 different graphs of decision trees performance. Based on our analysis on the graphs we have found an important relationship: The more we increase the tree depth, the more we reduce the training error, which goes down to practically zero. The training error, though, seems to find its best values around depths 6 & 5, and then starts to increase with the maximum tree depth.
+  ![Alt text](/img/perf.png)
+  When max depth was 1, the model was suffering from **high bias**. The model was performing poorly not only on the test set, but also on the training set. This means that no matter how much data we give it, it does not capture the relationships and patterns in the data which can help us improve predictive performance. On the other hand, when the max depth was 10, the model was suffering from **overfitting**. In this case, the training error was virtually nil. However, the test error was still significant. The model, at this point, has **“memorized”** the training set such that the training error is low, but cannot generalize well enough to do well with unseen data.
+  
+  
+  
+#### Model Complexity
+![Alt text](/img/modelComplexity.png)
+As max depth increases training errors decreases from 45 at the beginning to nearly zero but the testing error has a drastic desrease at the beginning but it will stay steady between 30 to 40. This indicates the **variance is steady and model is not generalized enough** since there are some drastic increases in max depth 6 and 12.
+The (max_depth=5) appears to yield the model that will generalize the best.Which is confirmed by calling the best_params_member of GridSearchCV which gives values in the range [5, 6] with high frequency, and sometimes 4, or 7. This is due to the random sampling in the way cross-validation is done. So we should choose the least complex model that explains the data, and I'd go with 5 here.
+
+![Alt text](/img/biasvariance.png)
+
 #### Installation
 This project requires **Python 2.7** and the following Python libraries installed:
 
@@ -63,7 +101,6 @@ You will also need to have software installed to run and execute an [iPython Not
 Udacity recommends our students install [Anaconda](https://www.continuum.io/downloads), i pre-packaged Python distribution that contains all of the necessary libraries and software for this project.
 
 #### Run
-
 In a terminal or command window, navigate to the top-level project directory `boston_housing/` (that contains this README) and run one of the following commands:
 
   ```ipython notebook boston_housing.ipynb```
